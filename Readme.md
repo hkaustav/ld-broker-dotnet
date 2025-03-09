@@ -54,3 +54,26 @@ This file contains the `LDConnector` class, which is responsible for interacting
 
       Console.WriteLine("Listening for flag changes...");
   }
+  
+- public bool BoolVariation(string flagKey, bool defaultValue)
+
+    Gets the boolean variation of a feature flag for the given context.
+
+- public FeatureFlagsState GetAllFlags()
+
+    Gets the state of all feature flags for the given context.
+
+### Program.cs
+This file contains the main entry point for the application and sets up the web server.
+
+## Configuration
+
+Adds OpenAPI services.
+Configures HTTPS redirection.
+Initializes the LDConnector and sets up endpoints.
+
+## Endpoints
+- `/health`: Returns a health check response.
+- `/flag/{name}`: Returns the boolean variation of the specified feature flag.
+- `/flags`: Returns the state of all feature flags.
+- `/sse`: Sets up a Server-Sent Events (SSE) endpoint to listen for flag changes.
